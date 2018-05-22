@@ -81,6 +81,10 @@ $(function() {
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function() {
+        beforeEach(function(done) {
+            loadFeed(0, done());
+        });
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -89,10 +93,35 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        it("tracks that the LoadFeed Function was called", function(done) {
+            const entry = document.querySelector('.feed');
+            expect(entry.length).not.toBe(0);
+            done();
+        });
+    });
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function () {
+        let oldContent,
+            newContent;
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                oldContent = document.querySelector('.feed');
+                done();
+            });
+        });
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+        it("contents changed", function (done) {
+            // get new feed's value (index 1) and test it
+            loadFeed(1, function() {
+                newContent = document.querySelector('.feed');
+                done();
+            });
+            expect(oldContent).not.toEqual(newContent);
+        });
+    });
 }());
