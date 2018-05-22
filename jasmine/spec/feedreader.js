@@ -115,7 +115,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        it("contents changed", function (done) {
+        it('contents changed', function (done) {
             // get new feed's value (index 1) and test it
             loadFeed(1, function() {
                 newContent = document.querySelector('.feed');
