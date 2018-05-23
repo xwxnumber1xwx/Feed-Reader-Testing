@@ -1,5 +1,5 @@
 # Feed Reader Testing
-This is a simple feed reader written from another developer. I implemented the Javascript's tests with the framework [Jasmine](http://jasmine.github.io/) version 2.1.
+This is a simple feed reader written from another developer from [Udacity](https://de.udacity.com/). I implemented the Javascript's tests with the framework [Jasmine](http://jasmine.github.io/) version 2.1.
 
 ## steps to run
 Open the file index.html and you will find all the tests on the bottom of the page.
